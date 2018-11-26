@@ -15,10 +15,16 @@
     components: {
       SelectElem
     },
+    props: ['value'],
     data() {
       return {
-        selected: null,
+        selected: this.value,
         selectOptions: []
+      }
+    },
+    watch: {
+      selected(val) {
+        this.$emit('input', val);
       }
     },
     mounted() {
