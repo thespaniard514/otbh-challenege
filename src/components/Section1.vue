@@ -2,86 +2,63 @@
   <div class="container">
     <SectionHeader class="section-header" sectionName="Section 1" sectionSubtext="Lorem ipsum dorot sit amet didi dada." />
     <div class="cards">
-      <b-card-group deck>
-        <b-card title="Lorem"
-                img-src="@/assets/stock1.png"
-                img-alt="Stock Image"
-                img-top
-                align="center"
-                border-variant="variant-none">
-                <p class="card-text">Lorem ipsum dorot sit amet didi dada dudu doo. Aliquam at portt titor donec. Plaaecer nisl das. Lorem ipsum dorot sit amet didi dada dudu doo lorem ipsum das.</p>
-                <b-btn class="read-more">Read More</b-btn>
-        </b-card>
-        <b-card title="Ipsum"
-                img-src="@/assets/stock2.png"
-                img-alt="Stock Image"
-                img-top
-                align="center"
-                border-variant="variant-none">
-                <p class="card-text">Lorem ipsum dorot sit amet didi dada dudu doo. Aliquam at portt titor donec. Plaaecer nisl das. Lorem ipsum dorot sit amet didi dada dudu doo lorem ipsum das.</p>
-                <b-btn class="read-more">Read More</b-btn>
-        </b-card>
-        <b-card title="Dolor Sit"
-                img-src="@/assets/stock3.png"
-                img-alt="Stock Image"
-                img-top
-                align="center"
-                border-variant="variant-none">
-                <p class="card-text">Lorem ipsum dorot sit amet didi dada dudu doo. Aliquam at portt titor donec. Plaaecer nisl das. Lorem ipsum dorot sit amet didi dada dudu doo lorem ipsum das.</p>
-                <b-btn class="read-more">Read More</b-btn>
-        </b-card>
-      </b-card-group>
+      <Card cardTitle="Lorem"
+            cardText="Lorem ipsum dorot sit amet didi dada dudu doo. Aliquam at portt titor donec. Plaaecer nisl das. Lorem ipsum dorot sit amet didi dada dudu doo lorem ipsum das."
+            class="card"
+      >
+        <img src="@/assets/stock1.png" alt="Stock Photo" slot="cardImage"/>
+        <b-btn class="read-more" slot="button">Read More</b-btn>
+      </Card>
+      <Card cardTitle="Ipsum"
+            cardText="Lorem ipsum dorot sit amet didi dada dudu doo. Aliquam at portt titor donec. Plaaecer nisl das. Lorem ipsum dorot sit amet didi dada dudu doo lorem ipsum das."
+      >
+        <img src="@/assets/stock2.png" alt="Stock Photo" slot="cardImage"/>
+        <b-btn class="read-more" slot="button">Read More</b-btn>
+      </Card>
+      <Card cardTitle="Dorlo Sit"
+            cardText="Lorem ipsum dorot sit amet didi dada dudu doo. Aliquam at portt titor donec. Plaaecer nisl das. Lorem ipsum dorot sit amet didi dada dudu doo lorem ipsum das."
+      >
+        <img src="@/assets/stock3.png" alt="Stock Photo" slot="cardImage"/>
+        <b-btn class="read-more" slot="button">Read More</b-btn>
+      </Card>
     </div>
   </div>
 </template>
 
 <script>
   import SectionHeader from '@/components/SectionHeader.vue';
+  import Card from '@/components/Card.vue';
 
   export default {
     name: 'Section1',
     components: {
-      SectionHeader
+      SectionHeader,
+      Card
     }
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .section {
   color: #4b4845;
 }
 .section-header {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
+}
+
+@media(min-width: 768px){
+  .cards {
+    display: flex;
+  }
 }
 
 .cards {
+  justify-content: center;
   padding-bottom: 100px;
 }
-
-/* .heading-text .section-name {
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 48px;
-  margin-bottom: 5px;
-}
-
-.section-subtext {
-  color: #afafaf;
-} */
-
-.tile {
-}
-
-.read-more {
-  background-color: #fff;
-  border-color: #57ab4a;
-  color: #57ab4a;
-}
-
-.read-more:hover {
-  background-color: #57ab4a;
-  opacity: .4;
+.card {
+  padding: 20px 10px;
 }
 
 .border-variant-none {

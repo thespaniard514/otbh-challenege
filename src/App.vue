@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       <Header />
-      <!-- Would usually throw router view here -->
+      <!-- Would throw router view here if bigger app -->
       <Section1 />
       <Footer />
   </div>
@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss">
 #app {
+  /* Using Montserrat - closest free font to ProximaNova */
   font-family: 'Montserrat', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
