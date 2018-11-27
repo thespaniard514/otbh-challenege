@@ -8,12 +8,12 @@
 
 <script>
   import axios from "axios";
-  import SelectElem from "@/components/Select.vue";
+  //import SelectElem from "@/components/Select.vue";
 
   export default {
     name: 'CountrySelect',
     components: {
-      SelectElem
+      //SelectElem
     },
     props: ['value'],
     data() {
