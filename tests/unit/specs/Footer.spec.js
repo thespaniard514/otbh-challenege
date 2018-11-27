@@ -1,11 +1,18 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount, mount, createLocalVue } from '@vue/test-utils'
+import BootstrapVue from 'bootstrap-vue'
+import Vuelidate from 'vuelidate'
+import NewsletterSubscribe from "@/components/Subscribe.vue"
 import Footer from '@/components/Footer.vue'
 
+const localVue = createLocalVue();
+localVue.use(BootstrapVue);
+localVue.use(Vuelidate);
+
 describe('Footer', () => {
-  it('has an email error with bad email', () => {
-    const email = 'notvalidemail';
-    //const wrapper = shallowMount(Footer);
-    //wrapper.setData({form: { country: null, email: email }});
-    //expect(wrapper.vm).toBeTruthy();
+  const wrapper = mount(Footer, {localVue})
+
+  it('renders NewsletterSubscribe', () => {
+    expect(wrapper.contains(NewsletterSubscribe)).toBe(true)
   })
+  
 })
